@@ -3,12 +3,11 @@ package com.tbcreational.files;
 /*
  * Prototype class for different file conversions 
  */
-public class File {
+public class File implements Cloneable{
 	private String name; /* name of file */
 	private String path; /* path to file */
-	private String type; /* filetype (extension string) */
 	private String delimiter; /* set this as the delimited (string allows for multicharacter delimiters) */
-	private String tagstyle; /* use this field for tag-style conversions*/
+	private boolean tagstyle; /* use this field for tag-style conversions*/
 	
 	
 	public String getName() {
@@ -23,22 +22,27 @@ public class File {
 	public void setPath(String path) {
 		this.path = path;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
 	public String getDelimiter() {
 		return delimiter;
 	}
 	public void setDelimiter(String delimiter) {
 		this.delimiter = delimiter;
 	}
-	public String getTagstyle() {
+	public boolean getTagstyle() {
 		return tagstyle;
 	}
-	public void setTagstyle(String tagstyle) {
+	public void setTagstyle(boolean tagstyle) {
 		this.tagstyle = tagstyle;
+	}
+	
+	@Override
+	public File clone() {
+		try {
+			return (File) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+			//clone didn't work
+			return this;
+		}
 	}
 }

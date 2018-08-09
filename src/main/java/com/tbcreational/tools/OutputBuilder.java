@@ -6,6 +6,7 @@ public class OutputBuilder {
 	
 	private File getOutputFile(String path)
 	{
-		return new File("path");
+		//return new File("path");
+		return null;
 	}
 }

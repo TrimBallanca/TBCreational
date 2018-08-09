@@ -1,5 +1,7 @@
 package com.tbcreational.main;
 
+import com.tbcreational.files.File;
+
 public class ConvertMain {
 	/*
 
@@ -48,9 +50,25 @@ OutputBuilder - builder
 
 	public static void main(String[] args)
 	{
-		System.out.print("Testing the package");
+		System.out.println("Testing the package");
+		String inFilename = "test.txt";
+		String inPathToFile = "C:/";
+		String inDelimiter = ",";
+		String outFilename = "output.txt";
+		String outPathToFile = "C:/";
+		String outDelimiter = ";";
+		Boolean tagTypeConversion = false; //used to handle conversions of tags
+
 		ConversionFactory factory = ConversionFactory.getInstance();
+		factory.setSourceFileInfo(inFilename, inPathToFile, inDelimiter);
+		factory.setDestFileInfo(outFilename, outPathToFile, outDelimiter);
 		
-		File input = factory.
+		factory.convert(tagTypeConversion);
+		
+		
+
+		System.out.print(input.getDelimiter());
+		System.out.print(test.getDelimiter());
+
 	}
 }
