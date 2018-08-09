@@ -1,11 +1,16 @@
 package com.tbcreational.files;
 
+/*
+ * Prototype class for different file conversions 
+ */
 public class File {
-	private String name;
-	private String path;
-	private String type;
-	private String delimiter;
-	private String tagstyle;
+	private String name; /* name of file */
+	private String path; /* path to file */
+	private String type; /* filetype (extension string) */
+	private String delimiter; /* set this as the delimited (string allows for multicharacter delimiters) */
+	private String tagstyle; /* use this field for tag-style conversions*/
+	
+	
 	public String getName() {
 		return name;
 	}

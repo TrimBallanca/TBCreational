@@ -1,7 +1,9 @@
 package com.tbcreational.main;
 
 public class ConvertMain {
-	/*Due 8/9/18
+	/*
+
+Due 8/9/18
 
 Your job is to use creational patterns to solve a common problem - file conversion.
 
@@ -48,5 +50,7 @@ OutputBuilder - builder
 	{
 		System.out.print("Testing the package");
 		ConversionFactory factory = ConversionFactory.getInstance();
+		
+		File input = factory.
 	}
 }
