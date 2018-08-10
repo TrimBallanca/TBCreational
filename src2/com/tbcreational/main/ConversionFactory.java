@@ -16,7 +16,7 @@ public class ConversionFactory {
     public OutputBuilderDirector getFileBuilderDirector(
             String inFilename, String inDelimiter, String outFilename,
             String outDelimiter, Boolean tagTypeConversion) {
-        OutputBuilderDirector director = new OutputBuilderDirector();
+        OutputBuilderDirector director = new OutputBuilderDirector(inFilename, inDelimiter,outFilename, outDelimiter,tagTypeConversion);
         
         director.setInputFile(inFilename, inDelimiter,tagTypeConversion);
         director.setOutputFile(outFilename, outDelimiter,tagTypeConversion);

@@ -57,15 +57,16 @@ OutputBuilder - builder
 		String outFilename = "C:/output.txt";
 		String outDelimiter = ";";
 		Boolean tagTypeConversion = false; //used to handle conversions of tags
+		                                   //builders must be updated to include passing of this parameter
 
 		ConversionFactory factory = ConversionFactory.getInstance();
 		
-		OutputBuilderDirector directory = factory.getFileBuilderDirector(inFilename, inDelimiter,
+		OutputBuilderDirector director = factory.getFileBuilderDirector(inFilename, inDelimiter,
 		        outFilename, outDelimiter, tagTypeConversion);
 		
 		
 		
-		//factory.convert(tagTypeConversion);
+		//director.performConversion();
 		
 		
 
