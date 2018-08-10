@@ -3,7 +3,7 @@ package com.tbcreational.files;
 /*
  * Prototype class for different file conversions 
  */
-public class File implements Cloneable{
+public class FileConversionObj implements Cloneable{
 	private String name; /* name of file */
 	private String path; /* path to file */
 	private String delimiter; /* set this as the delimited (string allows for multicharacter delimiters) */
@@ -36,9 +36,9 @@ public class File implements Cloneable{
 	}
 	
 	@Override
-	public File clone() {
+	public FileConversionObj clone() {
 		try {
-			return (File) super.clone();
+			return (FileConversionObj) super.clone();
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 			//clone didn't work
