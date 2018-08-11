@@ -2,15 +2,18 @@ package com.tbcreational.tools;
 
 public class ConversionBuilderDirector {
 
-    ConversionBuilder builder;
-    public ConversionBuilderDirector(String inFilename, String inDelimiter, 
-    		String outFilename, String outDelimiter) {
-    	//use conversion builder to create ConversionExecutor object
-    	builder.setInFilename(inFilename);
-    	builder.setInDelimter(inDelimiter);
-    	builder.setOutFilename(outFilename);
-    	builder.setOutDelimiter(outDelimiter);
-    	
-    }
+    ConversionExecutor executor;
 
+	public ConversionBuilderDirector(String inFilename, String outFilename, ConversionType conversionType) {
+		ConversionBuilder builder = new ConversionBuilder();
+		executor = builder.setInFilename(inFilename)
+						  .setOutFilename(outFilename)
+						  .setTagType(conversionType)
+						  .build();
+	}
+	
+	public boolean convert()
+	{
+		return executor.convert();
+	}
 }

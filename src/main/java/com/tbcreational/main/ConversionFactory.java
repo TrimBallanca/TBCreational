@@ -1,6 +1,7 @@
 package com.tbcreational.main;
 
 import com.tbcreational.tools.ConversionBuilderDirector;
+import com.tbcreational.tools.ConversionType;
 
 public class ConversionFactory {
 
@@ -13,12 +14,16 @@ public class ConversionFactory {
 	{
 		return instance;
 	}
-	public void createConversion(String inFilename, String inDelimiter,
-			String outFilename, String outDelimiter) {
+
+	public boolean convert(String inFilename, String outFilename, ConversionType conversionType) {
 		
-		ConversionBuilderDirector directory = new ConversionBuilderDirector(
-				inFilename, inDelimiter, outFilename, outDelimiter);
+		ConversionBuilderDirector director = new ConversionBuilderDirector(
+				inFilename, outFilename, conversionType);
 		//pass the conversion information to the builder director
 		//builder director will use the builder pattern to create a conversion executor
+		
+		//execute the conversion
+		return director.convert();
+		
 	}
 }
