@@ -1,0 +1,11 @@
+
+I started off with a few different designs. It was difficult to implement all creational patterns
+ and have structures that still made sense (in terms of why does this structure exist). In the 
+ end, the factory was chosen as the entry point into the application. The singleton factory 
+ creates the BuilderDirector which uses the builder pattern to produce the ConversionExecutor. 
+ The ConversionExecutor takes the prototypical Converter and creates the appropriate class based
+ on the conversion information provided, in the form of an enumeration. Adding an entry to the
+ enumeration should correspond with creating a new class of the Converter prototype.
+ 
+Design-wise, there were a few ways of approaching this, but Converter prototype pattern with the
+rest of the design choices I felt most comfortable with.
