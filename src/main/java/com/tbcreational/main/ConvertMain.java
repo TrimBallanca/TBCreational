@@ -1,5 +1,6 @@
 package com.tbcreational.main;
 
+import com.tbcreational.tools.ConversionBuilderDirector;
 import com.tbcreational.tools.ConversionType;
 
 public class ConvertMain {
@@ -21,8 +22,8 @@ public class ConvertMain {
 		
 		//Weird design choice here to have everything done through the factory and to also have
 		//it be a singleton, but the requirements state as such
-		
-		if(factory.convert(inFilename, outFilename, conversionType)) {
+		ConversionBuilderDirector mydirector = factory.getConverter(inFilename, outFilename, conversionType);
+		if(mydirector.convert()) {
 			System.out.println("Conversion successful!");
 		}
 		else {
